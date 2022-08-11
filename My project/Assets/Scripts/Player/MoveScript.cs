@@ -74,7 +74,7 @@ public class MoveScript : MonoBehaviour
 
             if (_onTheGround == true && _touch.phase == TouchPhase.Began)
             {
-                _player.ChangeStamina(-1); 
+                _player.ChangeStaminaValue(-1); 
                 _playerObject.velocity = Vector2.zero;
                 _playerObject.AddForce(Vector2.up * force, ForceMode2D.Impulse);
             }

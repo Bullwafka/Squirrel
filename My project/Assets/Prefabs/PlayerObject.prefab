@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 1099989864412617768}
   - component: {fileID: 56185544646525391}
   - component: {fileID: 8006572271508320866}
-  - component: {fileID: 6902003564475085412}
-  - component: {fileID: 8632492633117602434}
   - component: {fileID: 1099989864412617769}
   - component: {fileID: 7025985957656306961}
   - component: {fileID: 1099989864412617770}
@@ -105,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxStaminaValue: 5
   _staminaRecoveryCooldown: 1
-  _debugStamina: {fileID: 0}
+  _staminaUI: []
 --- !u!114 &8006572271508320866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,35 +122,6 @@ MonoBehaviour:
   _coins: {fileID: 0}
   _coin: {fileID: 0}
   _highScorePoint: {fileID: 0}
---- !u!114 &6902003564475085412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099989864412617942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efdba29a5d40f0d408afbfd83a565c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerObject: {fileID: 0}
-  _text: {fileID: 0}
---- !u!114 &8632492633117602434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099989864412617942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec3205a32adad54d9ad329a7cb286ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxStaminaSerializer: 0
-  _staminaPointRecoveryTime: 0
-  _image: []
 --- !u!114 &1099989864412617769
 MonoBehaviour:
   m_ObjectHideFlags: 0

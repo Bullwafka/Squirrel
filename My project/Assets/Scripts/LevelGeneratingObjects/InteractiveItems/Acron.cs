@@ -35,6 +35,6 @@ public class Acron : InteractiveItem
     protected override void OnItemTake()
     {
         Player player = GameObject.Find("PlayerObject").GetComponent<Player>();
-        player.ChangeStamina(_staminaValue);
+        player.ChangeStaminaValue(_staminaValue);
     }
 }

@@ -8,12 +8,14 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int _maxStaminaValue;
     [SerializeField] private float _staminaRecoveryCooldown;
-    [SerializeField] private TMP_Text _debugStamina;
+    [SerializeField] private GameObject[] _staminaUI;
 
     private WaitForSeconds _staminaCoolDown = new WaitForSeconds(1.5f);
     private WaitForSeconds _staminaRegenerationDelay = new WaitForSeconds(0.7f);
-    
+
     private bool _coroutineRunning;
+
+    private int _currentStaminaValue;
     public int Stamina
     {
         get => _stamina;
@@ -30,26 +32,27 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Stamina = _maxStaminaValue;
-        _debugStamina.text = Stamina.ToString();
+        _currentStaminaValue = Stamina;
+        ChangeStaminaUI();
     }
-    
-    public void ChangeStamina(int value)
+
+    public void ChangeStaminaValue(int value)
     {
         if (Stamina + value >= 0 & Stamina + value <= _maxStaminaValue)
         {
             Stamina += value;
         }
-        else if(Stamina + value > _maxStaminaValue)
+        else if (Stamina + value > _maxStaminaValue)
         {
             Stamina = _maxStaminaValue;
         }
-        
-        if(Stamina < _maxStaminaValue & _coroutineRunning == false)
+
+        if (Stamina < _maxStaminaValue & _coroutineRunning == false)
         {
             StartCoroutine(StaminaRegeneration());
         }
-        
-        if(Stamina == 0)
+
+        if (Stamina == 0)
         {
             JumpBlocked = true;
         }
@@ -57,8 +60,7 @@ public class Player : MonoBehaviour
         {
             JumpBlocked = false;
         }
-
-        _debugStamina.text = Stamina.ToString();
+        ChangeStaminaUI();
     }
 
     private IEnumerator StaminaRegeneration()
@@ -69,7 +71,7 @@ public class Player : MonoBehaviour
 
         while (Stamina < _maxStaminaValue)
         {
-            ChangeStamina(1);
+            ChangeStaminaValue(1);
             yield return _staminaCoolDown;
         }
         Debug.Log("Stop");
@@ -77,5 +79,10 @@ public class Player : MonoBehaviour
         yield break;
     }
 
-
+    private void ChangeStaminaUI()
+    {
+        _staminaUI[_currentStaminaValue].SetActive(false);
+        _staminaUI[Stamina].SetActive(true);
+        _currentStaminaValue = Stamina;
+    }
 }
