@@ -9,6 +9,14 @@ public class NewLevelObjectsGenerator : MonoBehaviour
 
     private Dictionary<string, List<GameObject>> _objectPool;
 
+    private void Start()
+    {
+        foreach (LevelGeneratingObject item in _itemsList)
+        {
+            item.ResetGeneratorValues();
+        }
+    }
+
     public void InitializePool()
     {
         Dictionary<string, List<GameObject>> gameObjectsPool = new Dictionary<string, List<GameObject>>();

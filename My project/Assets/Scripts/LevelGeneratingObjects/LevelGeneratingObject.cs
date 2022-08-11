@@ -38,7 +38,10 @@ public class LevelGeneratingObject : MonoBehaviour
     {
         
     }
+    public virtual void ResetGeneratorValues()
+    {
 
+    }
     protected virtual void OnDisableObject()
     {
 

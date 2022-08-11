@@ -26,6 +26,12 @@ public class Acron : InteractiveItem
     {
         return Acron.CurrentPositionY;
     }
+
+    public override void ResetGeneratorValues()
+    {
+        Acron.CurrentPositionY = 0;
+        Acron.SpawnDistance = 0;
+    }
     protected override void OnItemTake()
     {
         Player player = GameObject.Find("PlayerObject").GetComponent<Player>();

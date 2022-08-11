@@ -25,6 +25,12 @@ public class JumpBoost : InteractiveItem
     {
         return JumpBoost.CurrentPositionY;
     }
+
+    public override void ResetGeneratorValues()
+    {
+        JumpBoost.CurrentPositionY = 0;
+        JumpBoost.SpawnDistance = 0;
+    }
     protected override void OnItemTake()
     {
         Rigidbody2D player = GameObject.Find("PlayerObject").GetComponent<Rigidbody2D>();

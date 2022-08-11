@@ -25,4 +25,9 @@ public class Branch : LevelGeneratingObject
     {
         return Branch.SpawnDistance;
     }
+    public override void ResetGeneratorValues()
+    {
+        Branch.CurrentPositionY = 0;
+        Branch.SpawnDistance = 0;
+    }
 }

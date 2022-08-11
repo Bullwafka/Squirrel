@@ -27,6 +27,11 @@ public class Coin : InteractiveItem
         return Coin.CurrentPositionY;
     }
 
+    public override void ResetGeneratorValues()
+    {
+        Coin.CurrentPositionY = 0;
+        Coin.SpawnDistance = 0;
+    }
     protected override void OnItemTake()
     {
         EventManager.InvokePickUpCoinEvent(_coinValue);

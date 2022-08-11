@@ -6,7 +6,6 @@ public class SuddenDeathAlert : MonoBehaviour
 {
     [SerializeField] private GameObject _suddenDeathAllert;
     [SerializeField] private FireMover _fireMover;
-    [SerializeField] private Transform _playerTransform;
     [SerializeField] private TMP_Text _timerDisplay;
     [SerializeField] private float _timer;
 
