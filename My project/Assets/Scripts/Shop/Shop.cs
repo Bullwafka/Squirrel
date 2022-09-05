@@ -71,7 +71,7 @@ public class Shop : MonoBehaviour
         }
     }
 
-    public void OnBuyBottonClick()
+    public void OnBuyButtonClick()
     {
         if (_score.OnBuyGoods(_currentItem.Price))
         {
@@ -84,7 +84,7 @@ public class Shop : MonoBehaviour
         }
     }
 
-    public void OnDeclineBottonClick()
+    public void OnDeclineButtonClick()
     {
         _shopItemDescriptionPanels.SetActive(false);
     }

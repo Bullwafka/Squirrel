@@ -5,11 +5,10 @@ public class LvlObjGen : MonoBehaviour
 {
     [SerializeField] private NewLevelObjectsGenerator _levelObjectGenerator;
     [SerializeField] private GameObject _playerObject;
-    
 
-
-    [SerializeField] private List<InteractiveItem> _itemsList;
     [SerializeField] private List<Branch> _branchesList;
+
+    public List<InteractiveItem> _itemsList;
     private void OnEnable()
     {
         _levelObjectGenerator.InitializePool();

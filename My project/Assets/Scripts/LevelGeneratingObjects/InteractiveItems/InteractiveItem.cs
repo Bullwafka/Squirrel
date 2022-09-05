@@ -3,7 +3,10 @@ using UnityEngine;
 
 public abstract class InteractiveItem : LevelGeneratingObject
 {
-
+    public void UpdateItemData(string json)
+    {
+        JsonUtility.FromJsonOverwrite(json, this);
+    }
     protected abstract void OnItemTake();
     protected void OnTriggerEnter2D(Collider2D collision)
     {

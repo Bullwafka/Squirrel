@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public abstract class ShopItem : ScriptableObject
+public abstract class ShopItem : MonoBehaviour
 {
     [SerializeField] public Sprite Sprite;
     [SerializeField] private string _name;

@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Coin : InteractiveItem
 {
     [SerializeField] private int _coinValue;
+
+    //SavingSystem value
+    public int CoinValue => _coinValue;
+
     public static float CurrentPositionY;
     public static float SpawnDistance;
     public override void SetSpawnDistance()
@@ -35,5 +37,10 @@ public class Coin : InteractiveItem
     protected override void OnItemTake()
     {
         EventManager.InvokePickUpCoinEvent(_coinValue);
+    }
+
+    public void Updatevalue(int value)
+    {
+        _coinValue = value;
     }
 }
