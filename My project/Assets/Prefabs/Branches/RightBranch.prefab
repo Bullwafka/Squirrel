@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5909216561089615412}
   - component: {fileID: 5909216561089615415}
   - component: {fileID: 6821869915809399778}
-  - component: {fileID: -6210399185818744610}
+  - component: {fileID: -3063420750088551519}
   m_Layer: 0
   m_Name: RightBranch
   m_TagString: RightBranch
@@ -142,7 +142,7 @@ CapsuleCollider2D:
   m_Offset: {x: -1.19, y: 0.06}
   m_Size: {x: 2.38, y: 0.14}
   m_Direction: 1
---- !u!114 &-6210399185818744610
+--- !u!114 &-3063420750088551519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,11 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5909216561089615414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 513f5b76a83b13e4695038b7661f71e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 924624e75c891b5469f2210c89123097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolSize: 30
-  _minGenerateDistance: 1.5
-  _maxGenerateDistance: 3
-  _minPositionX: 2.6
-  _maxPositionX: 2.6
+  _object: {fileID: 11400000, guid: 4a7604ce061dab5458fd674d23c580f0, type: 2}

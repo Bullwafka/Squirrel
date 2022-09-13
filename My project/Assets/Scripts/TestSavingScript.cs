@@ -6,10 +6,9 @@ public class TestSavingScript : MonoBehaviour
 {
     private SavingSystem _savingSystem;
 
-    private void Awake()
+    public void Awake()
     {
         _savingSystem = new SavingSystem();
-        _savingSystem.LoadItemsData();
     }
     public void Save()
     {

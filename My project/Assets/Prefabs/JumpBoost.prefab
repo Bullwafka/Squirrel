@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5030068122637592673}
   - component: {fileID: 5030068122637592678}
   - component: {fileID: 5030068122637592679}
-  - component: {fileID: 6940007183156749028}
+  - component: {fileID: -2018663619773589884}
   m_Layer: 0
   m_Name: JumpBoost
   m_TagString: JumpBoost
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6940007183156749028
+--- !u!114 &-2018663619773589884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,12 +131,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5030068122637592676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc0ba85b700c1384da2de8fb1ed83905, type: 3}
+  m_Script: {fileID: 11500000, guid: b6599bbf5352c9b46a2e0b802d3803c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolSize: 5
-  _minGenerateDistance: 50
-  _maxGenerateDistance: 100
-  _minPositionX: -2.2
-  _maxPositionX: 2.2
-  _boostedJumpVelocity: 42
+  _object: {fileID: 11400000, guid: a135cd88394c00a4c9e6f391bb2cf547, type: 2}
+  _item: {fileID: 11400000, guid: a135cd88394c00a4c9e6f391bb2cf547, type: 2}

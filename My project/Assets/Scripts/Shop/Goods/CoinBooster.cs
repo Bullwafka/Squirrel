@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[CreateAssetMenu(menuName = "Shop/CoinBooster", order = 51)]
 public class CoinBooster : ShopItem
 {
     [SerializeField] private Coin _coin;

@@ -7,15 +7,15 @@ public class SavingSystem
 {
     private readonly string _filePath;
     private SavingItems _savingItemsData;
-    private LvlObjGen _generator;
+    private LevelGeneratingSystem _generator;
     public SavingSystem()
     {
         _filePath = Application.persistentDataPath + "Save.json";
-        _generator = GameObject.Find("Pool").GetComponent<LvlObjGen>();
+        _generator = GameObject.Find("Pool").GetComponent<LevelGeneratingSystem>();
     }
     public void SaveItemsData()
     {
-        SavingItems data = new SavingItems(_generator._itemsList);
+        SavingItems data = new SavingItems(_generator._interactableItemsList);
         var json = JsonUtility.ToJson(data, true);
         using (var writer = new StreamWriter(_filePath))
         {
@@ -25,10 +25,15 @@ public class SavingSystem
 
     public void LoadItemsData()
     {
+        SavingItems data = new SavingItems(_generator._interactableItemsList);
         if (File.Exists(_filePath))
         {
             string json = File.ReadAllText(_filePath);
             _savingItemsData = JsonUtility.FromJson<SavingItems>(json);
+        }
+        else
+        {
+            _savingItemsData = new SavingItems(_generator._interactableItemsList);
         }
     }
 }
@@ -37,8 +42,8 @@ public class SavingSystem
 [Serializable]
 public class SavingItems : ISerializationCallbackReceiver
 {
-    public List<InteractiveItem> _itemsList;
-    public SavingItems(List<InteractiveItem> itemsList)
+    public List<InteractableItem> _itemsList;
+    public SavingItems(List<InteractableItem> itemsList)
     {
         _itemsList = itemsList;
     }

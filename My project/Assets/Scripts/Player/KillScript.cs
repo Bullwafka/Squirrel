@@ -10,9 +10,11 @@ public class KillScript : MonoBehaviour
     private Rigidbody2D _rb;
     private MoveScript _moveScript;
     private Score _score;
+    private SavingSystem _savingSystem;
 
     private void Start()
     {
+        _savingSystem = new SavingSystem();
         _score = GetComponent<Score>();
         _spriteRenderer = _playerObj.GetComponent<SpriteRenderer>();
         _animation = GetComponent<Animation>();
@@ -29,6 +31,7 @@ public class KillScript : MonoBehaviour
             _spriteRenderer.color = new Color(255, 0, 0);
             _animation.Play("DeathAnim");
             _score.SaveRecord();
+            _savingSystem.SaveItemsData();
             Invoke("DisablePlayerObject", 1f);
             Invoke("RestartScene", 2f);
         }

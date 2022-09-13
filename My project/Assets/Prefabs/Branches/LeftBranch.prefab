@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 8655334186653138676}
   - component: {fileID: 8655334186653138674}
   - component: {fileID: 8655334186653138673}
-  - component: {fileID: 4592218178889319116}
   - component: {fileID: 6714321622023171112}
-  - component: {fileID: 8116798829660807702}
+  - component: {fileID: -2931704877830681182}
   m_Layer: 0
   m_Name: LeftBranch
   m_TagString: LeftBranch
@@ -127,44 +126,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!1839735485 &4592218178889319116
-Tilemap:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8655334186653138672}
-  m_Enabled: 1
-  m_Tiles: {}
-  m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
-  m_TileObjectToInstantiateArray: []
-  m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
-  m_TileOrientation: 0
-  m_TileOrientationMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
 --- !u!70 &6714321622023171112
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -181,7 +142,7 @@ CapsuleCollider2D:
   m_Offset: {x: 1.15, y: 0.25}
   m_Size: {x: 2.38, y: 0.13}
   m_Direction: 1
---- !u!114 &8116798829660807702
+--- !u!114 &-2931704877830681182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,11 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8655334186653138672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 513f5b76a83b13e4695038b7661f71e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 924624e75c891b5469f2210c89123097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolSize: 30
-  _minGenerateDistance: 1.5
-  _maxGenerateDistance: 3
-  _minPositionX: -2.6
-  _maxPositionX: -2.6
+  _object: {fileID: 11400000, guid: 442c96990ee0b784f8abad745e0db6db, type: 2}

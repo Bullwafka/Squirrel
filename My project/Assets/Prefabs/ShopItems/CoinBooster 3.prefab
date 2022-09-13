@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7991526183258868649}
   - component: {fileID: 2470677380380268457}
-  - component: {fileID: 7946848691799016228}
   m_Layer: 0
   m_Name: CoinBooster 3
   m_TagString: Untagged
@@ -83,21 +82,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7946848691799016228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974825431123410811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba5daa94135813144a0d005a6eb5dbf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: f23fe83ea7376594cbd4fdc01b133466, type: 3}
-  _name: Coin Booster lvl 4
-  _description: Increase coin cost by 4
-  _price: 100
-  _coin: {fileID: 6137999444282915632, guid: daecaa9db05a8ca4e967b59264369f66, type: 3}
-  _newValue: 5

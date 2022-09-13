@@ -12,7 +12,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private Image[] _buttonImages;
     [SerializeField] private GameObject _shopItemDescriptionPanels, _noMoneyPanel;
 
-    [SerializeField] private List<ShopItem> ItemsList;
+    [SerializeField] private ShopItemsList Items;
 
     [SerializeField] private Score _score;
 
@@ -22,7 +22,7 @@ public class Shop : MonoBehaviour
     {
         RefreshShop();
     }
-    public void OnShopButtonClick(ShopItem item)
+    public void OpenItemDescription(ShopItem item)
     {
         _description.text = item.Description;
         _price.text = item.Price.ToString();
@@ -32,25 +32,25 @@ public class Shop : MonoBehaviour
     public void OnButton1Click()
     {
         ShopItem item = randomItemsArray[0];
-        OnShopButtonClick(item);
+        OpenItemDescription(item);
         _currentItem = item;
     }
     public void OnButton2Click()
     {
         ShopItem item = randomItemsArray[1];
-        OnShopButtonClick(item);
+        OpenItemDescription(item);
         _currentItem = item;
     }
     public void OnButton3Click()
     {
         ShopItem item = randomItemsArray[2];
-        OnShopButtonClick(item);
+        OpenItemDescription(item);
         _currentItem = item;
     }
     public void OnButton4Click()
     {
         ShopItem item = randomItemsArray[3];
-        OnShopButtonClick(item);
+        OpenItemDescription(item);
         _currentItem = item;
     }
 
@@ -59,11 +59,11 @@ public class Shop : MonoBehaviour
         randomItemsArray = new ShopItem[4];
 
         System.Random random = new System.Random();
-        ItemsList = ItemsList.OrderBy(x => random.Next()).ToList();
+        Items.List = Items.List.OrderBy(x => random.Next()).ToList();
 
         for (int i = 0; i < randomItemsArray.Length; i++)
         {
-            randomItemsArray[i] = ItemsList[i];
+            randomItemsArray[i] = Items.List[i];
         }
         for (int i = 0; i < randomItemsArray.Length; i++)
         {

@@ -1,40 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Acron : InteractiveItem
+[CreateAssetMenu(fileName = "Acron", menuName = "Level objects/Acron", order = 51)]
+[System.Serializable]
+public class Acron : InteractableItem
 {
     [SerializeField] private int _staminaValue;
-    public static float CurrentPositionY;
-    public static float SpawnDistance;
-    public override void SetSpawnDistance()
+    private Player _player = null;
+    public override void OnItemTake()
     {
-        Acron.SpawnDistance += MinGenerateDistance;
-    }
-
-    public override void SetCurrentPositionY(float value)
-    {
-        Acron.CurrentPositionY += value;
-    }
-
-    public override float GetSpawnDistance()
-    {
-        return Acron.SpawnDistance;
-    }
-
-    public override float GetCurrentPosition()
-    {
-        return Acron.CurrentPositionY;
-    }
-
-    public override void ResetGeneratorValues()
-    {
-        Acron.CurrentPositionY = 0;
-        Acron.SpawnDistance = 0;
-    }
-    protected override void OnItemTake()
-    {
-        Player player = GameObject.Find("PlayerObject").GetComponent<Player>();
-        player.ChangeStaminaValue(_staminaValue);
+        if(_player == null)
+        {
+            _player = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+        }
+        _player.ChangeStaminaValue(_staminaValue);
     }
 }

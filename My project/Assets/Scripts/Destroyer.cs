@@ -14,7 +14,7 @@ public class Destroyer : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<LevelGeneratingObject>(out LevelGeneratingObject levelObject))
+        if (collision.gameObject.TryGetComponent<LevelObject>(out LevelObject levelObject))
         {
             levelObject.DisableObject();
         }

@@ -1,39 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class JumpBoost : InteractiveItem
+[CreateAssetMenu(fileName = "JumpBoost", menuName = "Level objects/JumpBoost", order = 51)]
+[System.Serializable]
+public class JumpBoost : InteractableItem
 {
     [SerializeField] private float _boostedJumpVelocity;
-    public static float CurrentPositionY;
-    public static float SpawnDistance;
-    public override void SetSpawnDistance()
-    {
-        JumpBoost.SpawnDistance += MinGenerateDistance;
-    }
+    private Rigidbody2D _playerRigidbody = null;
 
-    public override void SetCurrentPositionY(float value)
+    public override void OnItemTake()
     {
-        JumpBoost.CurrentPositionY += value;
-    }
-    public override float GetSpawnDistance()
-    {
-        return JumpBoost.SpawnDistance;
-    }
-
-    public override float GetCurrentPosition()
-    {
-        return JumpBoost.CurrentPositionY;
-    }
-
-    public override void ResetGeneratorValues()
-    {
-        JumpBoost.CurrentPositionY = 0;
-        JumpBoost.SpawnDistance = 0;
-    }
-    protected override void OnItemTake()
-    {
-        Rigidbody2D player = GameObject.Find("PlayerObject").GetComponent<Rigidbody2D>();
-        player.velocity = new Vector2(0, _boostedJumpVelocity);
+        if(_playerRigidbody == null)
+        {
+            _playerRigidbody = GameObject.FindObjectOfType<Player>().GetComponent<Rigidbody2D>();
+        }
+        _playerRigidbody.velocity = new Vector2(0, _boostedJumpVelocity);
     }
 }
